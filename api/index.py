@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify
 from g4f.client import Client
-from g4f.cookies import set_cookies
+import random
+import requests
+
 app = Flask(__name__)
 
 
@@ -15,6 +17,15 @@ def get_answer():
     if not question:
         return jsonify({'error': 'Question parameter is required'}), 400    
     try:
+        proxies = requests.get("https://proxylist.geonode.com/api/proxy-list?limit=500&page=1&sort_by=lastChecked&sort_type=desc")
+        proxies = proxies.json()
+        data = proxies['data']
+        total = proxies['total']
+        
+        aleatorio = random.randint(0,500)
+        proxy = data[aleatorio]
+        proxy = "http://"+proxy['ip']+":"+proxy['port']
+        G4F_PROXY=proxy
         client = Client()
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
