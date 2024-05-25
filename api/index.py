@@ -16,9 +16,9 @@ def get_answer():
         return jsonify({'error': 'Question parameter is required'}), 400    
     try:
         set_cookies(".google.com", {
-          "__Secure-1PSIDCC": "AKEyXzUPG7_1fAQjMLNE_PMoVqhfTswE53e_p0ibIJeFFyvjpd9iAGj1PtvilZqjKe3f4_sm0Q",
-          "__Secure-1PSIDTS": "sidts-CjEBLwcBXDGRKlxKI6aFGQG5DvxSOAOYomOSXSQ6OI6HbRh1c3SzPFG2UyZDdu9RWa4AEAA",
-          "__Secure-1PSID":"g.a000kAikKfidrFdIUqxvSZqS8p_jUkiEp3tgXBea-ObFbHY45LRdMfzaxJyu4v5-jTH1XhyqygACgYKATASARYSFQHGX2Miq87l-Z8ddHn1HvDg_vZNYRoVAUF8yKoB_OqyY_K9n3kG3ro4EMcO0076"
+                  "__Secure-1PSIDCC": "AKEyXzWF64AJVWEzjFLqkeFq7Fdx7pgofszk9MQ45bZliXvpZR1sEiQLhpCiMC4LPtD6SVS2-g",
+                  "__Secure-1PSID": "g.a000kAikKfidrFdIUqxvSZqS8p_jUkiEp3tgXBea-ObFbHY45LRdMfzaxJyu4v5-jTH1XhyqygACgYKATASARYSFQHGX2Miq87l-Z8ddHn1HvDg_vZNYRoVAUF8yKoB_OqyY_K9n3kG3ro4EMcO0076",
+                  "__Secure-1PSIDTS":"sidts-CjEBLwcBXA9vrV0jqYF23L2ap5SJ5hfle1b-jvTMbgzaiZCeUTBBlliaIsuHCclYPtFlEAA"
         })
         client = Client()
         response = client.chat.completions.create(
