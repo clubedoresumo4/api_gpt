@@ -24,7 +24,7 @@ def get_answer():
         
         aleatorio = random.randint(0,total)
         proxy = data[aleatorio]        
-        proxy = "http://195.90.221.3:80"
+        proxy = "http://72.10.164.178:5657"
         G4F_PROXY=proxy
         client = Client()
         response = client.chat.completions.create(
