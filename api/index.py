@@ -4,9 +4,7 @@ from g4f.cookies import set_cookies
 app = Flask(__name__)
 
 
-set_cookies(".bing.com", {
-  "_UR": "cdxcls=0&QS=0&TQS=0"
-})
+
 @app.route('/')
 def home():
     return 'Hello, World!'
@@ -19,7 +17,7 @@ def get_answer():
     try:
         client = Client()
         response = client.chat.completions.create(
-            model="gpt-4",
+            model="gpt-3.5-turbo",
             messages=[{"role": "user", "content": f'''{question}'''}],
         )    
         return jsonify({'resposta': response.choices[0].message.content})
