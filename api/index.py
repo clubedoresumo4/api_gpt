@@ -19,7 +19,7 @@ def get_answer():
     try:
         client = Client()
         response = client.chat.completions.create(
-            model="gpt4",
+            model="gpt-4",
             messages=[{"role": "user", "content": f'''{question}'''}],
         )    
         return jsonify({'resposta': response.choices[0].message.content})
