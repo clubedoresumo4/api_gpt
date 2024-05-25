@@ -17,7 +17,7 @@ def get_answer():
     if not question:
         return jsonify({'error': 'Question parameter is required'}), 400    
     try:
-        proxies = requests.get("https://proxylist.geonode.com/api/proxy-list?limit=500&page=1&sort_by=lastChecked&sort_type=desc")
+        proxies = requests.get("https://proxylist.geonode.com/api/proxy-list?protocols=http&limit=2500&page=1&sort_by=lastChecked&sort_type=desc")
         proxies = proxies.json()
         data = proxies['data']
         total = proxies['total']
