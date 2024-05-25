@@ -15,7 +15,7 @@ def get_answer():
     try:
         client = Client()
         response = client.chat.completions.create(
-            model="gpt_4o",
+            model="gemini",
             messages=[{"role": "user", "content": f'''{question}'''}],
         )    
         return jsonify({'resposta': response.choices[0].message.content})
