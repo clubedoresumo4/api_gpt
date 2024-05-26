@@ -28,7 +28,7 @@ def get_answer():
         G4F_PROXY=proxy
         client = Client()
         response = client.chat.completions.create(
-            model="gpt-3.5-turbo",
+            model="gpt-4",
             messages=[{"role": "user", "content": f'''{question}'''}],
         )    
         return jsonify({'resposta': response.choices[0].message.content})
